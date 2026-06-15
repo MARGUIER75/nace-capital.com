@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOME - Nace Capital</title>
+  <meta name="description" content="Nace Capital is a Paris-based advisory firm helping alternative investment managers raise capital and grow across Europe. Expert in private markets, capital formation, and EMEA investor networks." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.nace-capital.com/" />
+  <meta property="og:title" content="HOME - Nace Capital" />
+  <meta property="og:description" content="Expert advisory for alternative investment managers seeking to raise capital and expand across Europe." />
+  <meta property="og:url" content="https://www.nace-capital.com/" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    /* ─── PALETTE (logo blue + white) ─── */
+    :root {
+      --blue:       #3B6DB5;   /* logo blue  */
+      --blue-dark:  #264F8A;   /* darker     */
+      --blue-deep:  #1A3660;   /* deepest    */
+      --blue-light: #EBF1FA;   /* tint       */
+      --white:      #FFFFFF;
+      --text:       #1C2B3A;
+      --text-light: #576574;
+      --border:     #D0DCF0;
+      --font:       'Segoe UI', system-ui, -apple-system, sans-serif;
+      --max-w:      1080px;
+    }
+
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; }
+    body  { font-family: var(--font); color: var(--text); background: var(--white); line-height: 1.7; font-size: 16px; }
+    a     { text-decoration: none; color: inherit; }
+    img   { max-width: 100%; display: block; }
+    ul    { list-style: disc; padding-left: 1.4em; }
+    p     { margin-bottom: 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ─── HELPERS ─── */
+    .wrap    { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 72px 0; }
+    .section--alt  { background: var(--blue-light); }
+    .section--dark { background: var(--blue-deep); color: var(--white); }
+
+    .btn {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      padding: 13px 30px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: .95rem;
+      letter-spacing: .01em;
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--blue-dark); }
+    .btn--outline {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+    }
+    .btn--outline:hover { background: rgba(255,255,255,.15); }
+
+    h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.2; }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem);   font-weight: 700; line-height: 1.25; margin-bottom: .6em; }
+    h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: .4em; color: var(--blue-dark); }
+
+    /* ─── HEADER ─── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner {
+      max-width: var(--max-w); margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo-box {
+      background: var(--blue);
+      border-radius: 4px;
+      padding: 7px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1.15;
+    }
+    .logo-box .logo-nace {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: white;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .logo-box .logo-capital {
+      font-size: .72rem;
+      font-weight: 700;
+      color: white;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    nav { display: flex; align-items: center; gap: 36px; }
+    nav a {
+      font-size: .9rem; font-weight: 500; color: var(--text-light);
+      letter-spacing: .02em; text-transform: uppercase;
+      transition: color .2s;
+    }
+    nav a:hover, nav a.active { color: var(--blue); }
+    @media (max-width: 680px) { nav { display: none; } }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative; min-height: 560px;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      background: url('img/hero.jpg') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(26, 54, 96, 0.62);
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: var(--max-w); margin: 0 auto; padding: 80px 24px;
+      color: var(--white);
+    }
+    .hero-content h1 { color: var(--white); margin-bottom: .6em; max-width: 700px; }
+    .hero-content p  { font-size: 1.1rem; color: rgba(255,255,255,.85); max-width: 560px; margin-bottom: 2em; }
+
+    /* ─── INTRO BAND ─── */
+    .band {
+      background: var(--blue);
+      color: var(--white);
+      padding: 28px 24px;
+    }
+    .band-inner {
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .band h2 { font-size: 1.3rem; font-weight: 600; color: white; margin-bottom: .5em; }
+    .band p  { color: rgba(255,255,255,.85); max-width: 760px; }
+
+    /* ─── 3 STRENGTHS ─── */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .strength { }
+    .strength h3 { color: var(--blue); margin-bottom: .4em; }
+
+    /* ─── FULL-WIDTH PHOTO ─── */
+    .photo-full {
+      width: 100%; height: 420px; object-fit: cover;
+      display: block;
+    }
+    .photo-full--short { height: 320px; }
+
+    /* ─── TEXT SECTION AFTER PHOTO ─── */
+    .after-photo { padding: 60px 0 72px; }
+
+    /* ─── WHO WE WORK WITH ─── */
+    .partner-list { list-style: none; padding: 0; margin-top: 16px; }
+    .partner-list li {
+      padding: 10px 0 10px 20px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      color: var(--text);
+    }
+    .partner-list li::before {
+      content: '→';
+      position: absolute; left: 0;
+      color: var(--blue); font-weight: 700;
+    }
+    .partner-list li:last-child { border-bottom: none; }
+
+    /* ─── SERVICES ─── */
+    .services-list { margin-top: 32px; display: flex; flex-direction: column; gap: 28px; }
+    .svc { padding-left: 20px; border-left: 3px solid var(--blue); }
+    .svc h3 { color: var(--white); }
+    .svc p, .svc ul { color: rgba(255,255,255,.8); font-size: .95rem; }
+    .svc ul { margin-top: 6px; }
+    .svc ul li { margin-bottom: 3px; }
+
+    /* ─── EXPERTISE TAGS ─── */
+    .expertise-row {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px;
+    }
+    .exp-tag {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.25);
+      color: var(--white);
+      padding: 10px 20px; border-radius: 4px;
+      font-weight: 600; font-size: .95rem;
+    }
+
+    /* ─── TAILORED APPROACH ─── */
+    .approach-list { list-style: none; padding: 0; margin-top: 16px; }
+    .approach-list li {
+      padding: 8px 0 8px 22px;
+      position: relative; border-bottom: 1px solid var(--border);
+    }
+    .approach-list li::before { content: '✓'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .approach-list li:last-child { border-bottom: none; }
+
+    /* ─── ABOUT ─── */
+    .about-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: start;
+    }
+    @media (max-width: 720px) { .about-cols { grid-template-columns: 1fr; gap: 36px; } }
+
+    .values-list { margin-top: 24px; display: flex; flex-direction: column; gap: 20px; }
+    .val { }
+    .val h3 { margin-bottom: .2em; }
+    .val p  { font-size: .95rem; color: var(--text-light); }
+
+    .founder-card {
+      background: var(--blue-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .founder-card h3 { font-size: 1.2rem; color: var(--blue-dark); margin-bottom: 4px; }
+    .founder-title   { font-size: .9rem; font-weight: 600; color: var(--blue); margin-bottom: 16px; }
+    .founder-card p  { font-size: .95rem; color: var(--text-light); }
+    .asset-tags      { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .atag {
+      background: var(--blue); color: white;
+      font-size: .78rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px;
+    }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: var(--blue-deep); color: white;
+      padding: 64px 24px; text-align: center;
+    }
+    .cta-band h2 { color: white; margin-bottom: .5em; }
+    .cta-band p  { color: rgba(255,255,255,.8); max-width: 580px; margin: 0 auto 28px; font-size: 1.05rem; }
+
+    /* ─── CONTACT ─── */
+    .contact-cols {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 48px; margin-top: 48px;
+    }
+    @media (max-width: 680px) { .contact-cols { grid-template-columns: 1fr; } }
+
+    .contact-detail { margin-bottom: 20px; }
+    .contact-detail strong { display: block; font-size: .85rem; text-transform: uppercase; letter-spacing: .06em; color: var(--blue); margin-bottom: 4px; }
+    .contact-detail a:hover { color: var(--blue); }
+
+    form { display: flex; flex-direction: column; gap: 12px; }
+    form input, form textarea, form select {
+      width: 100%; padding: 12px 14px;
+      border: 1.5px solid var(--border); border-radius: 4px;
+      font-size: .95rem; font-family: var(--font); color: var(--text);
+      background: var(--white); outline: none; transition: border-color .2s;
+    }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--blue); }
+    form textarea { min-height: 130px; resize: vertical; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-note { font-size: .8rem; color: var(--text-light); }
+    #form-success {
+      display: none;
+      background: #d4edda; border: 1px solid #b8dacc; color: #155724;
+      padding: 12px 16px; border-radius: 4px; font-size: .9rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--blue-deep); color: rgba(255,255,255,.65);
+      padding: 40px 24px 28px;
+    }
+    .footer-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+    }
+    footer h4 { color: var(--white); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 14px; }
+    footer p, footer a { font-size: .88rem; line-height: 1.8; }
+    footer a:hover { color: white; }
+    .footer-bottom {
+      max-width: var(--max-w); margin: 28px auto 0;
+      padding-top: 20px; border-top: 1px solid rgba(255,255,255,.1);
+      text-align: center; font-size: .82rem; color: rgba(255,255,255,.45);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ HEADER ═══════════ -->
+<header>
+  <div class="header-inner">
+    <a href="#home" class="logo" aria-label="Nace Capital — home">
+      <div class="logo-box">
+        <span class="logo-nace">NACE</span>
+        <span class="logo-capital">Capital</span>
+      </div>
+    </a>
+    <nav>
+      <a href="#home"     class="active">HOME</a>
+      <a href="#about">ABOUT US</a>
+      <a href="#services">WHAT WE DO</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section id="home" class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>Expert in Private Markets and Capital Formation</h1>
+    <p>We support asset managers in their growth journey and fundraising efforts across Europe through strategy, access, and insight. Nace Capital is a Paris-based advisory firm founded in 2025 to help alternative investment managers execute effective capital formation strategies and develop customized business expansion plans.</p>
+    <a href="#contact" class="btn">Get in touch with us</a>
+  </div>
+</section>
+
+<!-- ═══════════ BAND ═══════════ -->
+<div class="band">
+  <div class="band-inner">
+    <h2>Connecting Capital to Opportunity</h2>
+    <p>Our clients benefit from access to a broad and trusted network of investors—including pension funds, insurers, funds of funds, family offices, and investment consultants. Whether you're launching your first strategy or expanding into new markets, we help you craft a compelling message and connect with the right LPs.</p>
+  </div>
+</div>
+
+<!-- ═══════════ CORE STRENGTHS ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <h2>Our Core Strengths</h2>
+    <div class="strengths-grid">
+      <div class="strength">
+        <h3>Deep Industry Expertise</h3>
+        <p>Over 25 years of experience across private markets with a unique understanding of the alternative industry.</p>
+      </div>
+      <div class="strength">
+        <h3>Strategic Advisory</h3>
+        <p>Hands-on guidance in designing fundraising campaigns, market positioning, and business development strategies.</p>
+      </div>
+      <div class="strength">
+        <h3>Pan-European Investor Network</h3>
+        <p>We maintain strong relationships with key capital LPs across Europe.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Photo -->
+<img src="img/wind-turbines.jpg" alt="Field of wind turbines" class="photo-full" loading="lazy" />
+
+<!-- ═══════════ WHO WE WORK WITH ═══════════ -->
+<section class="section">
+  <div class="wrap">
+    <h2>Who We Work With</h2>
+    <p>We partner with:</p>
+    <ul class="partner-list">
+      <li>Emerging managers launching their first funds</li>
+      <li>Established firms expanding their investor base</li>
+      <li>Growth-stage platforms seeking acquisitions or partnerships</li>
+    </ul>
+    <p style="margin-top:20px;">Our approach is bespoke, strategic, and execution-driven.</p>
+  </div>
+</section>
+
+<!-- Photo -->
+<img src="img/aerial-city.jpg" alt="Aerial view of city" class="photo-full photo-full--short" loading="lazy" />
+
+<!-- ═══════════ READY TO LAUNCH ═══════════ -->
+<div class="cta-band">
+  <h2>Ready to Launch or Scale Your Strategy?</h2>
+  <p>Looking to raise capital, strategic repositioning, inorganic growth — we help you define and execute your roadmap with precision.</p>
+  <a href="#contact" class="btn btn--outline">Get in Touch</a>
+</div>
+
+<!-- ═══════════════════════════════════════
+     WHAT WE DO
+═══════════════════════════════════════ -->
+<section id="services">
+  <!-- Photo -->
+  <img src="img/services-hero.jpg" alt="People standing inside city building" class="photo-full" loading="lazy" />
+
+  <div class="section section--dark" style="padding-top:64px;padding-bottom:0;">
+    <div class="wrap">
+      <h2 style="color:white;">What We Do</h2>
+      <p style="color:rgba(255,255,255,.8);max-width:720px;">At Nace Capital, we provide strategic advisory services to alternative investment managers seeking to raise capital and expand their platforms across Europe. From fund launches to international expansion, we serve as a trusted partner throughout the growth lifecycle.</p>
+      <a href="#contact" class="btn" style="margin-top:12px;">get in touch with us</a>
+    </div>
+  </div>
+
+  <!-- Strategic Advisory -->
+  <div class="section section--dark">
+    <div class="wrap">
+      <h2 style="color:white;">Strategic Advisory for Capital Formation</h2>
+      <p style="color:rgba(255,255,255,.8);max-width:720px;">We work with both emerging teams and established firms to design, execute, and refine their fundraising strategies. Our approach blends deep sector knowledge, investor insights, and execution capability.</p>
+
+      <!-- Photo inline -->
+      <img src="img/finance.jpg" alt="Finance and investment" style="width:100%;max-height:360px;object-fit:cover;border-radius:6px;margin:32px 0;" loading="lazy" />
+
+      <h3 style="color:white;margin-bottom:20px;">Our Core Services</h3>
+      <div class="services-list">
+        <div class="svc">
+          <h3>Capital Formation Strategy</h3>
+          <p>Clear, credible roadmaps tailored to market expectations.</p>
+        </div>
+        <div class="svc">
+          <h3>Investor Targeting &amp; Access</h3>
+          <p>Connections to a curated network of European allocators:</p>
+          <ul>
+            <li>Pension Funds</li>
+            <li>Insurance Companies</li>
+            <li>Funds of Funds</li>
+            <li>Family Offices</li>
+            <li>Investment Consultants</li>
+          </ul>
+        </div>
+        <div class="svc">
+          <h3>Market Positioning &amp; Materials</h3>
+          <p>Help shaping compelling narratives and producing institutional-grade materials: pitch decks, presentations, fund brochures.</p>
+        </div>
+        <div class="svc">
+          <h3>Growth Advisory</h3>
+          <p>Strategic advisory on inorganic growth (M&amp;A, partnerships), governance enhancements, and product innovation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Private Market Expertise -->
+  <div class="section section--dark" style="padding-top:0;">
+    <div class="wrap">
+      <h2 style="color:white;">Private Market Expertise</h2>
+      <p style="color:rgba(255,255,255,.8);">We advise across the full private markets spectrum:</p>
+      <div class="expertise-row">
+        <span class="exp-tag">Real Estate</span>
+        <span class="exp-tag">Infrastructure</span>
+        <span class="exp-tag">Natural Capital</span>
+        <span class="exp-tag">Private Credit</span>
+      </div>
+      <p style="color:rgba(255,255,255,.8);margin-top:20px;">Whether launching a new platform or refining an existing strategy, we guide clients with precision and market credibility. Our approach is bespoke, strategic, and execution-driven.</p>
+    </div>
+  </div>
+
+  <!-- Photos -->
+  <img src="img/construction.jpg" alt="Building under construction" class="photo-full photo-full--short" loading="lazy" />
+
+  <!-- Tailored approach -->
+  <section class="section">
+    <div class="wrap">
+      <img src="img/meeting.jpg" alt="People sitting at the table" style="width:100%;max-height:380px;object-fit:cover;border-radius:6px;margin-bottom:40px;" loading="lazy" />
+      <h2>A Tailored, Institutional Approach</h2>
+      <p>Each client is unique. We adapt our process to match your objectives, constraints, and capabilities. Our model is collaborative and execution-driven, offering:</p>
+      <ul class="approach-list">
+        <li>Short- or long-term advisory support</li>
+        <li>Investor communication prep and strategic feedback</li>
+        <li>Coordination with internal IR teams</li>
+      </ul>
+      <p style="margin-top:20px;">We help you turn vision into capital by aligning strategy and investor trust.</p>
+      <p>Our approach is bespoke, strategic, and execution-driven.</p>
+    </div>
+  </section>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ABOUT US
+═══════════════════════════════════════ -->
+
+<!-- Photo -->
+<img src="img/about-city.jpg" alt="Aerial view of city buildings" class="photo-full" loading="lazy" id="about" />
+
+<section class="section">
+  <div class="wrap">
+    <h2>Who We Are</h2>
+    <p>Founded in 2025, Nace Capital is an independent advisory firm based in Paris, dedicated to helping alternative investment managers access long-term capital. With over 25 years of capital formation experience, we combine sector insight, strategic clarity, and an expansive EMEA investor network.</p>
+    <a href="#contact" class="btn" style="margin-top:8px;">get in touch</a>
+  </div>
+</section>
+
+<!-- Founder + Values -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="about-cols">
+      <!-- Founder -->
+      <div>
+        <h2>Our Founder's Expertise</h2>
+        <p>Stéphane Marguier launched Nace Capital after more than two decades leading investor relations and capital raising efforts for top-tier asset managers. His experience spans the full spectrum of the alternative sector, including:</p>
+        <ul style="margin:16px 0 24px;">
+          <li>Real Estate</li>
+          <li>Infrastructure</li>
+          <li>Natural Capital</li>
+          <li>Private Credit</li>
+        </ul>
+
+        <!-- Photo -->
+        <img src="img/wheat-field.jpg" alt="Field of wheat" style="width:100%;max-height:320px;object-fit:cover;border-radius:6px;" loading="lazy" />
+      </div>
+
+      <!-- Values -->
+      <div>
+        <h2>Our Values</h2>
+        <div class="values-list">
+          <div class="val">
+            <h3>Integrity</h3>
+            <p>We provide independent, objective, and conflict-free advice.</p>
+          </div>
+          <div class="val">
+            <h3>Focus</h3>
+            <p>We work with a select number of clients to ensure quality and impact.</p>
+          </div>
+          <div class="val">
+            <h3>Partnership</h3>
+            <p>We build long-term relationships based on trust—with both managers and investors.</p>
+          </div>
+        </div>
+
+        <div class="founder-card" style="margin-top:32px;">
+          <div style="width:60px;height:60px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:700;color:white;margin-bottom:16px;">SM</div>
+          <h3>Stéphane Marguier</h3>
+          <p class="founder-title">Founder, NACE Capital</p>
+          <p>Paris-based. 25+ years of capital formation across European private markets.</p>
+          <div class="asset-tags">
+            <span class="atag">Real Estate</span>
+            <span class="atag">Infrastructure</span>
+            <span class="atag">Natural Capital</span>
+            <span class="atag">Private Credit</span>
+          </div>
+        </div>
+
+        <div style="margin-top:24px;padding:20px;background:white;border:1px solid var(--border);border-radius:6px;">
+          <strong style="display:block;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin-bottom:8px;">Location &amp; Regulatory Status</strong>
+          <p style="font-size:.92rem;color:var(--text-light);">60 Rue François 1er, 75008 Paris, France<br>Nace Capital is regulated by the French Regulatory authority, ensuring high standards and regulatory compliance.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ CONTACT ═══════════ -->
+<section id="contact" class="section">
+  <div class="wrap">
+    <h2>Contact Us</h2>
+    <p>Fill out the form below and we'll get back to you shortly.</p>
+
+    <div class="contact-cols">
+      <!-- Info -->
+      <div>
+        <div class="contact-detail">
+          <strong>Address</strong>
+          Nace Capital<br>60 Rue François 1er,<br>75008 Paris, France
+        </div>
+        <div class="contact-detail">
+          <strong>Phone</strong>
+          <a href="tel:+33651307435">+33 6 51 30 74 35</a>
+        </div>
+        <div class="contact-detail">
+          <strong>Email</strong>
+          <a href="mailto:contact@nace-capital.com">contact@nace-capital.com</a>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <input type="text"  name="name"    placeholder="Your name"    required />
+            <input type="text"  name="company" placeholder="Organisation" />
+          </div>
+          <input type="email" name="email"   placeholder="Email address" required />
+          <input type="tel"   name="phone"   placeholder="Phone (optional)" />
+          <select name="subject">
+            <option value="" disabled selected>Subject</option>
+            <option>Capital Formation Strategy</option>
+            <option>Investor Targeting &amp; Access</option>
+            <option>Market Positioning</option>
+            <option>Growth Advisory</option>
+            <option>Other</option>
+          </select>
+          <textarea name="message" placeholder="Tell us about your project…" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+          <p class="form-note">Your information is kept confidential and never shared with third parties.</p>
+          <div id="form-success">✓ Message sent — we'll get back to you shortly.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Nace Capital</h4>
+      <a href="#home" style="display:block;margin-bottom:4px;">Home</a>
+      <a href="#about" style="display:block;margin-bottom:4px;">About Us</a>
+      <a href="#services" style="display:block;margin-bottom:4px;">What We Do</a>
+      <a href="#contact" style="display:block;">Contact</a>
+    </div>
+    <div>
+      <h4>Address</h4>
+      <p>Nace Capital<br>60 Rue François 1er,<br>75008 Paris, France</p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p>
+        Cellphone : <a href="tel:+33651307435">+33 6 51 30 74 35</a><br>
+        E-mail : <a href="mailto:contact@nace-capital.com">contact@nace-capital.com</a>
+      </p>
+    </div>
+    <div>
+      <h4>Other links</h4>
+      <a href="legal-notice.html" style="display:block;margin-bottom:4px;">Legal notice</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Nace Capital</div>
+</footer>
+
+<script>
+  /* Active nav on scroll */
+  const anchors  = ['home','about','services','contact'];
+  const navLinks = document.querySelectorAll('nav a');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const a = document.querySelector(`nav a[href="#${e.target.id}"]`);
+        if (a) a.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  anchors.forEach(id => { const el = document.getElementById(id); if (el) obs.observe(el); });
+
+  /* Contact form */
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const data = new FormData(form);
+    if (form.action.includes('YOUR_FORM_ID')) {
+      document.getElementById('form-success').style.display = 'block'; form.reset(); return;
+    }
+    try {
+      const r = await fetch(form.action, { method:'POST', body:data, headers:{'Accept':'application/json'} });
+      if (r.ok) { document.getElementById('form-success').style.display = 'block'; form.reset(); }
+    } catch {}
+  });
+</script>
+</body>
+</html>
